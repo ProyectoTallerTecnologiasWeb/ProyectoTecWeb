@@ -1,0 +1,27 @@
+﻿@model Utalca.ControlAsistencia.Curso
+
+<div>
+    <h1>Horario</h1>
+    <table class="table">
+        <tr>
+            <th>Clase</th>
+            <th>Fecha</th>
+            <th>Sala</th>
+            <th>Registro Asistencia</th>
+        </tr>
+        @foreach (var clase in Model.Horario)
+        {
+            <tr>
+                <td>@clase.Titulo</td>
+                <td>@clase.Fecha.ToString("dd-MM-yyyy HH:mm")</td>
+                <td>@clase.Sala</td>
+                <td><button type="button" class="btn btn-default">Registrar Asistencia </button></td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+
+

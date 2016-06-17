@@ -1,0 +1,66 @@
+﻿@model Utalca.ControlAsistencia.Curso
+
+<div>
+    <h4>Curso</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Creditos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Creditos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagenURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagenURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.URL)
+        </dd>
+
+    </dl>
+<h4> Alumnos </h4>
+    <ul class="list-group">
+        @foreach (var curso in Model.Alumnos)
+        {
+            <li class="list-group-item"><a href="@Url.Action("Details", "Alumno", new { id = curso.ID })">@curso.Nombre</a></li>
+        }
+    </ul>
+
+
+</div>

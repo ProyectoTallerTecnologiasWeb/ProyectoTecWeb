@@ -1,0 +1,35 @@
+﻿@model Utalca.ControlAsistencia.Curso
+
+<div>
+    <h1>Registro Asistencia</h1>
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+        @foreach (var participante in Model.Alumnos)
+        {
+            <tr>
+                <td>@participante.Nombre</td>
+                <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+<script>
+    var uri = '/api/CursoApiController';
+    $(document).ready(function(){
+        console.log("estamos ready");
+        $("input[name^='chkAlumno-']").on("click", function () {
+            alert('me tocaron');
+            $.ajax({
+                url: uri,
+                type: 'POST',
+                data: { idCurso: 1, idClase: 20160316, idParticipante: $(this).val() },
+            });
+
+        });
+    });
+</script>
