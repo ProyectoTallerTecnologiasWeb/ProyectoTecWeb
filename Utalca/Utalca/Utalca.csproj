@@ -177,6 +177,8 @@
     <Content Include="Views\Curso\Details.cshtml" />
     <Content Include="Views\Curso\Horario.cshtml" />
     <Content Include="Views\Curso\RegistroAsistencia.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutInit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

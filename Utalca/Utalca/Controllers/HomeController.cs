@@ -13,5 +13,26 @@ namespace Utalca.Controllers
         {
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string email, string password)
+        {
+            var emailProfesor = "eortiz@utalca.cl";
+            if (email == emailProfesor )
+            {
+                //controlador, accion
+                return RedirectToAction("Index", "Curso");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
+        }
+
+
     }
 }
