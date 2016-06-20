@@ -109,6 +109,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Resouces\200x200.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -135,7 +136,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web.config" />
-    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_MenuProfesor.cshtml" />
     <Content Include="Views\Profesor\Index.cshtml" />
     <Content Include="Views\Profesor\DetallesPicante.cshtml" />
     <Content Include="Views\Profesor\DetallesPulento.cshtml" />
@@ -145,6 +146,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\CursoApiController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -177,6 +179,12 @@
     <Content Include="Views\Curso\Details.cshtml" />
     <Content Include="Views\Curso\Horario.cshtml" />
     <Content Include="Views\Curso\RegistroAsistencia.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutInit.cshtml" />
+    <Content Include="Views\Shared\_LayoutAlumno.cshtml" />
+    <Content Include="Views\Shared\_MenuAlumno.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Home\IndexAlumno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Alumno\" />
     <Folder Include="Views\ControlAsistencia\" />
   </ItemGroup>
   <ItemGroup>
