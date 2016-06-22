@@ -1,5 +1,9 @@
 ﻿@model Utalca.ControlAsistencia.Curso
 
+@{ 
+//    Utalca.ControlAsistencia.Clase clase = Model.Horario.Single
+}
+
 <div>
     <h1>Registro Asistencia</h1>
     <table class="table">
@@ -19,15 +23,17 @@
     </table>
 </div>
 <script>
-    var uri = '/api/CursoApiController';
     $(document).ready(function(){
         console.log("estamos ready");
         $("input[name^='chkAlumno-']").on("click", function () {
-            alert('me tocaron');
+            console.log('me tocaron');
             $.ajax({
-                url: uri,
-                type: 'POST',
-                data: { idCurso: 1, idClase: 20160316, idParticipante: $(this).val() },
+                url: '/api/CursoApi/RegistroAsistencia',
+                data: { idCurso: @Model.ID, idClase: 20160316, idParticipante: $(this).val() },
+                accepts: 'application/json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                method: 'POST',
+                success: function(respuesta) { console.log(respuesta); }
             });
 
         });
