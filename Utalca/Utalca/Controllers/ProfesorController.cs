@@ -24,7 +24,7 @@ namespace Utalca.Controllers
                 if(profesor.ID % 2 == 0)
                     return View("DetallesPicante", profesor);
                 else
-                    return View("DetallesPulento", profesor);
+                    return View("Detalles", profesor);
             }
             else
             {

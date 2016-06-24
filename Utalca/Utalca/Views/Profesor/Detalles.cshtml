@@ -1,0 +1,32 @@
+﻿@model Utalca.Models.Profesor
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="gallery-box">
+                <img style="width: 200px;" src="~/Resouces/200x200.gif">
+            </div>
+            <hr>
+            <p style="font-size: 16px; ">
+                Académico
+            </p>
+            <hr>
+            <h4><i class="fa fa-university"></i> Institución</h4>
+            Universidad de Talca, Facultad de Ingeniería
+        </div>
+
+        <div class="col-md-9">
+            <ul class="list-group">
+                <li class="list-group-item">@Model.Nombre    @Model.Apellido</li>
+                <li class="list-group-item">@Model.FechaNacimiento.ToString("dd-MM-yyyy")</li>
+                <li class="list-group-item">@Model.SitioWeb</li>
+                <li class="list-group-item">@Model.Biografia</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
