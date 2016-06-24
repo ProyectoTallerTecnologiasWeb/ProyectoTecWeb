@@ -6,28 +6,65 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/theme/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
-<body>
-    <div class="top-header bg-white hidden-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &nbsp;
-                </div>
-                <div class="col-sm-6">
-                    <ul class="list-inline pull-right">
-                        <li><a target="_blank" href="https://es-es.facebook.com/ingenieriaUtalca" class="icon-holder small rounded"><i class="fa fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://twitter.com/ingUtalca" class="icon-holder small rounded"><i class="fa fa-twitter"></i></a></li>
-                        <li><a target="_blank" href="https://cl.linkedin.com/in/utalca" class="icon-holder small rounded"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/user/canalUtalca" class="icon-holder small rounded"><i class="fa fa-youtube-play"></i></a></li>
-                    </ul>
+<body style="overflow: visible;" class="wide">
+    <header id="header">
+        <!-- top-header -->
+        <div class="top-header bg-white hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="list-inline pull-right">
+                            <li><a target="_blank" href="https://es-es.facebook.com/ingenieriaUtalca" class="icon-holder small rounded"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/ingUtalca" class="icon-holder small rounded"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://cl.linkedin.com/in/utalca" class="icon-holder small rounded"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/user/canalUtalca" class="icon-holder small rounded"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- //top-header -->
+        <!-- navbar -->
+         <hr />
+        <div class="navbar navbar-v1 padd-tb-30 yamm stay-top nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <img src="/Content/theme/img/logo.jpg" style="width: 100%; max-width: 300px; min-width: 200px" alt="logo">
+                    </a>
+                    <!--<a class="navbar-brand" href="#"><span>c</span>larity</a>-->
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <div class="pull-right hidden-md hidden-sm hidden-xs" style="text-align:right; padding-bottom: 10px">
+                        <a href="http://www.utalca.cl" target="_blank"><img src="/Content/theme/img/logoUtalcaNegro.png" style="height: 25px" alt="logo"></a>
+                    </div>
+                    <br style="clear: both">
+ 
+                </div><!--/.nav-collapse -->
+            </div><!-- ./container -->
+        </div>
+        <!-- //navbar -->
+    </header>
+
+
+
 
     @Html.Partial("_MenuProfesor")
     <div class="container body-content">
