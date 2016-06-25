@@ -52,7 +52,7 @@
             console.log('me tocaron');
             $.ajax({
                 url: '/api/CursoApi/RegistroAsistencia',
-                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("ddMMyyyyMMhh"), idParticipante: $(this).val() },
+                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("yyyyMMddHHmm"), idParticipante: $(this).val() },
                 accepts: 'application/json',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 method: 'POST',
