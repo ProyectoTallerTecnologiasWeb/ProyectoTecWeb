@@ -16,8 +16,8 @@
                 <td>@clase.Titulo</td>
                 <td>@clase.Fecha.ToString("ddMMyyyyHHmm")</td>
                 <td>@clase.Sala</td>
-                <td><a href="@Url.Action("RegistroAsistencia", "Curso", new {id = Model.ID , fecha = clase.Fecha })">Registrar Asistencia </a></td>
-            </tr>
+                <td><a href="@Url.Action("RegistroAsistencia", "Curso", new { id = Model.ID, fecha = clase.Fecha.ToString("ddMMyyyyHHmm") })">Registrar Asistencia </a></td>
+             </tr>
         }
 
     </table>

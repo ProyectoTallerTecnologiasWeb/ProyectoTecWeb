@@ -1,7 +1,7 @@
 ﻿@model Utalca.ControlAsistencia.Curso
 
 @{ 
-//    Utalca.ControlAsistencia.Clase clase = Model.Horario.Single
+    Utalca.ControlAsistencia.Clase clase = Model.Horario.Where(c => c.Fecha.ToString("ddMMyyyyHHmm") == @Request.QueryString["fecha"]).Single();
 }
 
 <div>
@@ -10,14 +10,37 @@
         <tr>
             <th>Nombre</th>
             <th></th>
+            <th></th>
         </tr>
         @foreach (var participante in Model.Alumnos)
         {
-            <tr>
-                <td>@participante.Nombre</td>
-                <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-
-            </tr>
+            // var isPresente = clase.Presentes.Single(p => p.ID == participante.ID);
+            if (clase.Presentes.Any())
+            {
+                <tr>
+                    <td>@participante.Nombre</td>
+                    @foreach (var presente in clase.Presentes)
+                    {
+                        if (presente.ID == participante.ID)
+                        {
+                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID" checked="checked"></td>
+                            //<td> @clase.Fecha</td>
+                        }
+                        else
+                        {
+                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
+                        }
+                    }
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@participante.Nombre</td>
+                    <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
+                    <td> @clase.Fecha</td>
+                </tr>
+            }
         }
 
     </table>
@@ -29,7 +52,7 @@
             console.log('me tocaron');
             $.ajax({
                 url: '/api/CursoApi/RegistroAsistencia',
-                data: { idCurso: @Model.ID, idClase: 20160316, idParticipante: $(this).val() },
+                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("yyyyMMddHHmm"), idParticipante: $(this).val() },
                 accepts: 'application/json',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 method: 'POST',
