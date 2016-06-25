@@ -17,21 +17,21 @@
             // var isPresente = clase.Presentes.Single(p => p.ID == participante.ID);
             if (clase.Presentes.Any())
             {
-
                 <tr>
                     <td>@participante.Nombre</td>
-                    @if (clase.Presentes.Single(p => p.ID == participante.ID).ID == participante.ID)
+                    @foreach (var presente in clase.Presentes)
                     {
-                        <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID" checked="checked"></td>
-                        <td> @clase.Fecha</td>
+                        if (presente.ID == participante.ID)
+                        {
+                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID" checked="checked"></td>
+                            //<td> @clase.Fecha</td>
+                        }
+                        else
+                        {
+                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
+                        }
                     }
-                    else
-                    {
-                        <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-                    }
-
                 </tr>
-
             }
             else
             {
@@ -52,7 +52,7 @@
             console.log('me tocaron');
             $.ajax({
                 url: '/api/CursoApi/RegistroAsistencia',
-                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("ddMMyyyyMMhh"), idParticipante: $(this).val() },
+                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("yyyyMMddHHmm"), idParticipante: $(this).val() },
                 accepts: 'application/json',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 method: 'POST',
