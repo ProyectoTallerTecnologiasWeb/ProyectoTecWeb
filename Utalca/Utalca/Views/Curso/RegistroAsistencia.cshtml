@@ -14,35 +14,17 @@
         </tr>
         @foreach (var participante in Model.Alumnos)
         {
-            // var isPresente = clase.Presentes.Single(p => p.ID == participante.ID);
-            if (clase.Presentes.Any())
-            {
-                <tr>
-                    <td>@participante.Nombre</td>
-                    @foreach (var presente in clase.Presentes)
-                    {
-                        if (presente.ID == participante.ID)
-                        {
-                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID" checked="checked"></td>
-                            //<td> @clase.Fecha</td>
-                        }
-                        else
-                        {
-                            <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-                        }
-                    }
-                </tr>
-            }
-            else
-            {
-                <tr>
-                    <td>@participante.Nombre</td>
-                    <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-                    <td> @clase.Fecha</td>
-                </tr>
-            }
-        }
-
+        <tr>
+            <td>@participante.Nombre</td>
+            <td >
+                <input id="chkAlumno-@participante.ID" class="asistencia-check" type="checkbox"
+                      
+                       @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
+                           { @Html.Raw("checked") ;
+                           } } />
+            </td>
+        </tr>
+                           }
     </table>
 </div>
 <script>
