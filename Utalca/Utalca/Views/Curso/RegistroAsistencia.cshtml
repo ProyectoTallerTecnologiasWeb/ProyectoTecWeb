@@ -14,20 +14,20 @@
         </tr>
         @foreach (var participante in Model.Alumnos)
         {
-        <tr>
-            <td>@participante.Nombre</td>
-            <td >
-                <input id="chkAlumno-@participante.ID" class="asistencia-check" type="checkbox"
+            <tr>
+                <td>@participante.Nombre</td>
+                <td >
+                    <input id="chkAlumno-@participante.ID" class="asistencia-check" type="checkbox"
                       
-                       @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
-                       { 
-                               @Html.Raw("checked") ;
-                        } 
+                           @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
+                           { 
+                                   @Html.Raw("checked") ;
+                            } 
                         
-                  } />
-            </td>
-        </tr>
-                           }
+                      } />
+                </td>
+            </tr>
+         }
     </table>
 </div>
 <script>
