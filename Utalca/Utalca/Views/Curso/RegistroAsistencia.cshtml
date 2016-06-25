@@ -17,14 +17,7 @@
             // var isPresente = clase.Presentes.Single(p => p.ID == participante.ID);
             if (clase.Presentes.Any())
             {
-                <tr>
-                    <td>@participante.Nombre</td>
-                    <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-                    <td> @clase.Fecha</td>
-                </tr>
-            }
-            else
-            {
+
                 <tr>
                     <td>@participante.Nombre</td>
                     @if (clase.Presentes.Single(p => p.ID == participante.ID).ID == participante.ID)
@@ -35,8 +28,17 @@
                     else
                     {
                         <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
-                    }       
+                    }
 
+                </tr>
+
+            }
+            else
+            {
+                <tr>
+                    <td>@participante.Nombre</td>
+                    <td><input type="checkbox" name="chkAlumno-@participante.ID" value="@participante.ID"></td>
+                    <td> @clase.Fecha</td>
                 </tr>
             }
         }
