@@ -30,7 +30,7 @@ namespace Utalca.Controllers
             return View(curso);
         }
 
-        public ActionResult RegistroAsistencia(DateTime fecha, long id)
+        public ActionResult RegistroAsistencia(long fecha, long id)
         {
             var servicio = new ControlAsistencia.ControlAsistenciaClient();
             var curso = servicio.Curso(id);
