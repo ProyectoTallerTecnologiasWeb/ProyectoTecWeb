@@ -53,13 +53,16 @@
     </header>
   
 
-    <div class="container body-content">
-        @RenderBody()
+    <div>
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @RenderBody()
+              
     </div>
+    <footer class="footer footer-sub bg-light-blue ">
+        <div class="container">
+            <h5>Facultad de ingenieria - realizado por Catalina Carvajal - Karina Vergara</h5>
+        </div>
+    </footer>
     @Html.Partial("_Errores")
     <script>
         $(document).ready(function () {
