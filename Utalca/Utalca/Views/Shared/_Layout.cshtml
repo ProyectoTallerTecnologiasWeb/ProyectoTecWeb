@@ -18,7 +18,7 @@
 <body style="overflow: visible;" class="wide">
     <header id="header">
         <!-- top-header -->
-        <div class="top-header bg-white hidden-xs ">
+        <div class="top-header hidden-xs ">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
@@ -36,34 +36,22 @@
             </div>
         </div>
         <!-- //top-header -->
-        <!-- navbar -->
-        <div class="navbar navbar-v1 padd-tb-30 yamm stay-top nav" role="navigation">
+        <div class="bg-white padd-tb-30">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                        <img src="/Content/theme/img/logo.jpg" style="width: 100%; max-width: 300px; min-width: 200px" alt="logo">
-                    </a>
-                    <!--<a class="navbar-brand" href="#"><span>c</span>larity</a>-->
+                <div class="col-xs-6">
+                    <a href="/"><img alt="logo" style="width: 100%; max-width: 300px; min-width: 200px" src="/Content/theme/img/logo.jpg"></a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <div class="pull-right hidden-md hidden-sm hidden-xs" style="text-align:right; padding-bottom: 10px">
-                        <a href="http://www.utalca.cl" target="_blank"><img src="/Content/theme/img/logoUtalcaNegro.png" style="height: 25px" alt="logo"></a>
+                <div class="col-xs-6">
+                    <div style="text-align:right; padding-top: 7px" class="pull-right hidden-md hidden-sm hidden-xs">
+                        <a target="_blank" href="http://www.utalca.cl"><img alt="logo" style="height: 25px" src="/Content/theme/img/logoUtalcaNegro.png"></a>
                     </div>
-                    <br style="clear: both">
-
-                </div><!--/.nav-collapse -->
-            </div><!-- ./container -->
+                </div>
+            </div>
         </div>
-        <!-- //navbar -->}
-        @Html.Partial("_MenuProfesor")
-    </header>
+        <!-- //navbar -->
 
+    </header>
+    @Html.Partial("_MenuProfesor")
 
     <div class="container body-content">
         @RenderBody()

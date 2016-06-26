@@ -394,15 +394,16 @@ hr {
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
+    border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
+
 
 p {
   margin: 0 0 10px;
@@ -4189,6 +4190,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
   top: 0;
   z-index: 1030;
 }
+.navbar-fixed-top .navbar-nav > li > a:hover {
+    background-color: #174677 !important;
+    color: #fff !important;
+}
 
 .navbar-fixed-bottom {
   bottom: 0;
@@ -4247,9 +4252,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+    color: #fefefe;
+    font-family: "Conv_ITCAvantGardeStd-Bold",sans-serif;
+    text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -4388,8 +4393,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #f8f8f8;
+   border-color: #e7e7e7;
+}
+
+.navbar-default-new {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #eee;
+    border-radius: 0
+}
+
+.bg-theme {
+    background-color: #2e8def !important;
+    color: #fff;
 }
 
 .navbar-default .navbar-brand {
@@ -4404,6 +4420,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-text {
   color: #777777;
+}
+
+.navbar-default-new .navbar-text {
+  color: #fdfdfd;
 }
 
 .navbar-default .navbar-nav > li > a {
