@@ -2,31 +2,67 @@
 @{
     ViewBag.Title = "Detalles";
 }
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="gallery-box">
-                <img style="width: 200px;" src="~/Resouces/200x200.gif">
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<body class="wide" style="overflow: visible;>
+
+    <div class="wrapper"> </div>
+    <section class="page-title bg-gray padd-tb-10 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="pull-left">
+                        <h3>Pablo Ignacio Rojas Valdes</h3>
+                    </div>
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="/Participante/Buscar">Participantes</a>
+                        </li>
+                        <li class="active">
+                            <a href="/Participante/Detalles/73">Pablo Ignacio Rojas Valdes</a>
+                        </li>
+                    </ol>
+                </div>
             </div>
-            <hr>
-            <p style="font-size: 16px; ">
-                Académico
-            </p>
-            <hr>
-            <h4><i class="fa fa-university"></i> Institución</h4>
-            Universidad de Talca, Facultad de Ingeniería
         </div>
+    </section>
 
-        <div class="col-md-9">
-            <ul class="list-group">
-                <li class="list-group-item">@Model.Nombre    @Model.Apellido</li>
-                <li class="list-group-item">@Model.FechaNacimiento.ToString("dd-MM-yyyy")</li>
-                <li class="list-group-item">@Model.SitioWeb</li>
-                <li class="list-group-item">@Model.Biografia</li>
-            </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="gallery-box">
+                    <img style="width: 200px;" src="~/Resouces/200x200.gif">
+                </div>
+                <hr>
+                <p style="font-size: 16px; ">
+                    Académico
+                </p>
+                <hr>
+                <h4><i class="fa fa-university"></i> Institución</h4>
+                Universidad de Talca, Facultad de Ingeniería
+            </div>
+
+            <div class="col-md-9">
+                <ul class="list-group">
+                    <li class="list-group-item">@Model.Nombre    @Model.Apellido</li>
+                    <li class="list-group-item">@Model.FechaNacimiento.ToString("dd-MM-yyyy")</li>
+                    <li class="list-group-item">@Model.SitioWeb</li>
+                    <li class="list-group-item">@Model.Biografia</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+</body>
+
 
 

@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -65,4 +65,59 @@ textarea {
 
 .hidden-xs {
     display: block !important;
+}
+
+
+.navbar-v1 {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+}
+.navbar {
+    border: medium none;
+    margin-bottom: 0;
+}
+
+.padd-tb-30 {
+    padding: 30px 0;
+}
+
+.nav {
+    list-style: outside none none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+body {
+    color: #888;
+    font-family: "Open Sans",sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    text-rendering: optimizelegibility;
+}
+
+*::-moz-selection {
+    background-color: #2e8def;
+    color: #fff;
+}
+
+body.boxed section, body.wide section {
+    background-color: #fff;
+}
+.page-title {
+    border-top: medium none;
+    position: relative;
+}
+.bg-gray {
+    background: #f9f9f9 none repeat scroll 0 0 !important;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+
+.padd-tb-10 {
+    padding: 10px 0;
+}
+
+section {
+    background-color: #fff;
 }
