@@ -265,3 +265,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+Utalca/Utalca/obj/Debug/Utalca.csprojResolveAssemblyReference.cache
+*.dll
+Utalca/Utalca/obj/Debug/Utalca.dll
