@@ -17,13 +17,11 @@
         <tr>
             <td>@participante.Nombre</td>
             <td >
-                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
-                      
-                       @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
-                       { 
-                               @Html.Raw("checked") ;
-
-                        } 
+                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"                
+                    @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
+                    {
+                            @Html.Raw("disabled && checked");
+                    } 
                   } />
             </td>
         </tr>
