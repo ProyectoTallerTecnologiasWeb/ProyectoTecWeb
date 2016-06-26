@@ -121,3 +121,6 @@ body.boxed section, body.wide section {
 section {
     background-color: #fff;
 }
+.page-title.bg-gray .breadcrumb > li a, .page-title.bg-gray .breadcrumb > li a:hover, .page-title.bg-gray .breadcrumb > li + li::before, .page-title.bg-white .breadcrumb > li a, .page-title.bg-white .breadcrumb > li a:hover, .page-title.bg-white .breadcrumb > li + li::before {
+    color: #888;
+}
