@@ -32,17 +32,16 @@ textarea {
 }
 
 .rounded {
-    background-color: #cacaca;
-    border-color: #808080;
-    border-style: solid;
+    background-color: #f7f7f7;
+    border-color: #eee;
     border-width: 1px;
     border-radius: 4px;
     width: 20px;
     height: 20px;
 }
 
-.karina-redondita:hover {
-    background-color: #4cff00;
+.rounded:hover {
+    background-color: #2e8def;
     transition: all 0.3s ease-in-out 0s;
 }
 
