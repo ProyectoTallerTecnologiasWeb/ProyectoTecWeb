@@ -61,8 +61,18 @@
         <!-- //navbar -->
     </header>
 
+    @{
+        if (true)
+        {
+            @Html.Partial("_MenuProfesor")
+        };
+        else{
+            @Html.Partial("_MenuAlumno")
+        };
+    }
+    
 
-    @Html.Partial("_MenuProfesor")
+   
     <div class="container body-content">
         @RenderBody()
         <hr />
