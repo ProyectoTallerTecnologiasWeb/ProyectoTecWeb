@@ -34,63 +34,73 @@
     <section class="padd-tb-30 active">
         <div class="container">
             <div class="row">
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Creditos)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Descripcion)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ImagenURL)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Nombre)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Seccion)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.URL)
-                        </th>
-                        <th></th>
-                    </tr>
+                <div class="tab-content">
+                    <div id="lista" class="tab-pane active" role="tabpanel">
+                        <div class="testimonial">
+                            <table class="table testimonial">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Creditos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ImagenURL)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nombre)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Seccion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.URL)
+                                    </th>
+                                    <th></th>
+                                </tr>
 
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Creditos)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Descripcion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ImagenURL)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Seccion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.URL)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                            </td>
-                        </tr>
-                    }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Creditos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ImagenURL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nombre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Seccion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.URL)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                        </td>
+                                    </tr>
+                                }
 
-                </table>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
 
 
 
-            </div>
+                    
+
+
+                </div>
         </div>
     </section>
 </body>
