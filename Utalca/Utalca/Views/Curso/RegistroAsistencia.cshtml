@@ -17,17 +17,16 @@
         <tr>
             <td>@participante.Nombre</td>
             <td >
-                <input id="chkAlumno-@participante.ID" class="asistencia-check" type="checkbox"
+                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
                       
                        @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
                        { 
-                               @Html.Raw("checked") ;
+                               @Html.Raw("checked") ;                              
                         } 
-                        
                   } />
             </td>
         </tr>
-                           }
+        }
     </table>
 </div>
 <script>
@@ -45,5 +44,6 @@
             });
 
         });
+       
     });
 </script>
