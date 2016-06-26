@@ -21,7 +21,7 @@
                       
                        @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
                        { 
-                               @Html.Raw("checked") ;                              
+                               @Html.Raw("checked") ;
                         } 
                   } />
             </td>
@@ -41,6 +41,11 @@
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 method: 'POST',
                 success: function(respuesta) { console.log(respuesta); }
+            });
+            $(':checkbox[readonly=readonly]').click(function(){
+               
+                return false;        
+               
             });
 
         });
