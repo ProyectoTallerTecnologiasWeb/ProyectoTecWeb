@@ -10,9 +10,12 @@
     <link href="~/Content/theme/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/carousel.js"></script>
+
 
 </head>
 <body style="overflow: visible;" class="wide">
@@ -49,17 +52,20 @@
             </div>
         </div>
         <!-- //navbar -->
-
+        @Html.Partial("_MenuProfesor")
     </header>
-    @Html.Partial("_MenuProfesor")
+  
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
+        
     </div>
+    <footer class="footer footer-sub bg-light-blue ">
+        <div class="container">
+            <h5>Facultad de ingenieria - realizado por Catalina Carvajal - Karina Vergara</h5>
+        </div>
+    </footer>
     @Html.Partial("_Errores")
     <script>
         $(document).ready(function () {
