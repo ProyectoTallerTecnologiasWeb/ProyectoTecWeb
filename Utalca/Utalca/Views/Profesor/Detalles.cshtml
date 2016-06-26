@@ -12,58 +12,54 @@
 
 <body class="wide" style="overflow: visible;>
 
-    <div class="wrapper">
-        <section class="page-title bg-gray padd-tb-10 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 ">
-                        <div class="pull-left">
-                            <h3>Pablo Ignacio Rojas Valdes</h3>
-                        </div>
-                        <ol class="breadcrumb pull-right hidden-xs">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li class="active">
-                                <a href="/Participante/Buscar">Participantes</a>
-                            </li>
-                            <li class="active">
-                                <a href="/Participante/Detalles/73">Pablo Ignacio Rojas Valdes</a>
-                            </li>
-                        </ol>
+    <div class="wrapper"> </div>
+    <section class="page-title bg-gray padd-tb-10 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="pull-left">
+                        <h3>@Model.Nombre</h3>
                     </div>
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="@Url.Action("Detalles", "Profesor", new { id = Model.ID })">@Model.Nombre</a>
+                        </li>
+                    </ol>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="padd-tb-30 active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="gallery-box">
-                            <img style="width: 200px;" src="~/Resouces/200x200.gif">
-                        </div>
-                        <hr>
-                        <p style="font-size: 16px; ">
-                            Académico
-                        </p>
-                        <hr>
-                        <h4><i class="fa fa-university"></i> Institución</h4>
-                        Universidad de Talca, Facultad de Ingeniería
+    <section class="padd-tb-30 active">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <img style="width: 200px;" src="~/Resouces/200x200.gif">
                     </div>
+                    <hr>
+                    <p style="font-size: 16px; ">
+                        Académico
+                    </p>
+                    <hr>
+                    <h4><i class="fa fa-university"></i> Institución</h4>
+                    Universidad de Talca, Facultad de Ingeniería
+                </div>
 
-                    <div class="col-md-9">
-                        <ul class="list-group">
-                            <li class="list-group-item">@Model.Nombre    @Model.Apellido</li>
-                            <li class="list-group-item">@Model.FechaNacimiento.ToString("dd-MM-yyyy")</li>
-                            <li class="list-group-item">@Model.SitioWeb</li>
-                            <li class="list-group-item">@Model.Biografia</li>
-                        </ul>
-                    </div>
+                <div class="col-md-9">
+                    <ul class="list-group">
+                        <li class="list-group-item">@Model.Nombre    @Model.Apellido</li>
+                        <li class="list-group-item">@Model.FechaNacimiento.ToString("dd-MM-yyyy")</li>
+                        <li class="list-group-item">@Model.SitioWeb</li>
+                        <li class="list-group-item">@Model.Biografia</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 </body>
 
 
