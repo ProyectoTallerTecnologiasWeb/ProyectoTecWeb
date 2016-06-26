@@ -16,7 +16,22 @@ textarea {
     max-width: 280px;
 }
 
-.karina-redondita {
+.icon-holder.small {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+}
+
+.icon-holder {
+    background-color: #f7f7f7;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+}
+
+.rounded {
     background-color: #cacaca;
     border-color: #808080;
     border-style: solid;
@@ -35,7 +50,6 @@ textarea {
 
     height: 10px;
     background-color: red;
-
 }
 
 .top-header {
