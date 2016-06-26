@@ -24,6 +24,8 @@ namespace Utalca.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
+
+            //Session.Add(“id_user”, email);
             var emailProfesor = "eortiz@utalca.cl";
             var pass = "admin";
             if (email == emailProfesor  && password == pass)
