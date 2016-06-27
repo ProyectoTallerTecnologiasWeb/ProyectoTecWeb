@@ -1,48 +1,68 @@
 ﻿@model Utalca.ControlAsistencia.Curso
 
-@{ 
+@{
     Utalca.ControlAsistencia.Clase clase = Model.Horario.Where(c => c.Fecha.ToString("ddMMyyyyHHmm") == @Request.QueryString["fecha"]).Single();
 }
 
-<div>
-    <h1>Registro Asistencia</h1>
-    <table class="table">
-        <tr>
-            <th>Nombre</th>
-            <th></th>
-            <th></th>
-        </tr>
-        @foreach (var participante in Model.Alumnos)
-        {
-        <tr>
-            <td>@participante.Nombre</td>
-            <td >
-<<<<<<< HEAD
-                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
-                      
-                       @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
-                       { 
-                               @Html.Raw("checked") ;
-                                                          
-                        } 
-=======
-                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"                
-                    @{if (clase.Presentes.Any(c => c.ID == @participante.ID))
-                    {
-                            @Html.Raw("disabled && checked");
-                    } 
->>>>>>> refs/remotes/origin/Karina
-                  } />
-            </td>
-        </tr>
-        }
-    </table>
-</div>
+<section class="page-title bg-gray padd-tb-10 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 ">
+                <div class="pull-left">
+                    <h3>Registro Asistencia</h3>
+                    <h3><b> @Html.DisplayFor(model => model.Nombre)</b> - sección @Html.DisplayFor(model => model.Seccion)</h3>
+                </div>
+                <ol class="breadcrumb pull-right hidden-xs">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Curso")">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Horario", "Curso")">Cursos</a>
+                    </li>
+                    <li class="active">Asistencia </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="col-lg-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title" ¨> </h3>
+            </div>
+            <table class="table table-bordered table-responsive">
+                <tr>
+                    <th>Nombre Alumno</th>
+                    <th>Clase</th>
+                    <th width="5%"></th>
+                </tr>
+                @foreach (var participante in Model.Alumnos)
+                {
+                    <tr>
+                        <td>@participante.Nombre</td>
+                        <td>@clase.Fecha.ToString("dd-MM-yyyy")</td>
+                        <td>
+                                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
+                                 @{if (clase.Presentes.Any(c => c.ID == @participante.ID)) {
+                                        @Html.Raw("disabled && checked") 
+                                  ; } } />
+                        </td>
+                    </tr>
+                    }
+            </table>
+            </div>
+        </div>
+    </div>
 <script>
     $(document).ready(function(){
         console.log("estamos ready");
         $("input[name^='chkAlumno-']").on("click", function () {
-            console.log('me tocaron');
+            
             $.ajax({
                 url: '/api/CursoApi/RegistroAsistencia',
                 data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("yyyyMMddHHmm"), idParticipante: $(this).val() },
@@ -51,13 +71,8 @@
                 method: 'POST',
                 success: function(respuesta) { console.log(respuesta); }
             });
-            $(':checkbox[readonly=readonly]').click(function(){
-               
-                return false;        
-               
-            });
 
         });
-       
+
     });
 </script>
