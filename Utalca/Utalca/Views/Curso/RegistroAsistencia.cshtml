@@ -48,14 +48,16 @@
                         <td>@participante.Nombre</td>
                         <td>@clase.Fecha.ToString("dd-MM-yyyy")</td>
                         <td>
-                                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
-                                 @{if (clase.Presentes.Any(c => c.ID == @participante.ID)) {
-                                        @Html.Raw("disabled && checked") 
-                                  ; } } />
+                            <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
+                                   @{if (clase.Presentes.Any(c => c.ID == @participante.ID)) { 
+                                     @Html.Raw("disabled && checked") ;
+                                       } 
+                                       } />
                         </td>
                     </tr>
-                    }
+    }
             </table>
+
             </div>
         </div>
     </div>
