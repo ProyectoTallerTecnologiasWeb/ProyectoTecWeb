@@ -1,8 +1,6 @@
 ﻿@model Utalca.ControlAsistencia.Curso
 
 @{
-    Layout = "~/Views/Shared/_LayoutAlumno.cshtml";
-    ViewBag.Title = "Registro Asistencia";
     Utalca.ControlAsistencia.Clase clase = Model.Horario.Where(c => c.Fecha.ToString("ddMMyyyyHHmm") == @Request.QueryString["fecha"]).Single();
 }
 
@@ -20,7 +18,7 @@
                     </li>
                     <li>
                         <a>Cursos</a>
-                       
+
                     </li>
                     <li>
                         <a href="@Url.Action("Horario", "Curso")">Cursos</a>
@@ -50,32 +48,17 @@
                         <td>@participante.Nombre</td>
                         <td>@clase.Fecha.ToString("dd-MM-yyyy")</td>
                         <td>
-                                <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
-                                 @{if (clase.Presentes.Any(c => c.ID == @participante.ID)) {
-                                        @Html.Raw("disabled && checked") 
-                                  ; } } />
+                            <input id="chkAlumno-@participante.ID" name="chkAlumno-@participante.ID" value="@participante.ID" class="check" type="checkbox"
+                                   @{if (clase.Presentes.Any(c => c.ID == @participante.ID)) { 
+                                        @Html.Raw("disabled && checked")  ;
+                                 }
+                                 @Html.Raw("disabled")  ;
+                               } />
                         </td>
                     </tr>
-                    }
+                     }
             </table>
-            </div>
+
         </div>
     </div>
-<script>
-    $(document).ready(function(){
-        console.log("estamos ready");
-        $("input[name^='chkAlumno-']").on("click", function () {
-            
-            $.ajax({
-                url: '/api/CursoApi/RegistroAsistencia',
-                data: { idCurso: @Model.ID, idClase: @clase.Fecha.ToString("yyyyMMddHHmm"), idParticipante: $(this).val() },
-                accepts: 'application/json',
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                method: 'POST',
-                success: function(respuesta) { console.log(respuesta); }
-            });
-
-        });
-
-    });
-</script>
+</div>
