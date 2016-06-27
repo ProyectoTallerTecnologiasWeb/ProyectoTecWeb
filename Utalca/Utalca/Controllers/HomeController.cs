@@ -15,6 +15,11 @@ namespace Utalca.Controllers
            
             return View();
         }
+        public ActionResult IndexAlumno()
+        {
+
+            return View();
+        }
         public ActionResult Login()
         {
             return View();
@@ -25,9 +30,20 @@ namespace Utalca.Controllers
             var usuario = new Models.Usuario();
             usuario.Email = email;
             usuario.Password = password;
-            
 
-            return RedirectToAction("Index", "Home");
+            if (email == "eortiz@utalca.cl" && password == "admin")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (email == "eortiz@alumnos.utalca.cl" && password == "alumno")
+            {
+                return RedirectToAction("IndexAlumno", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
           
         }
 

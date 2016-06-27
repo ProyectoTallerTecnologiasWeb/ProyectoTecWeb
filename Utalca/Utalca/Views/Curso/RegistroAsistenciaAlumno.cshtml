@@ -1,6 +1,8 @@
 ﻿@model Utalca.ControlAsistencia.Curso
 
 @{
+    Layout = "~/Views/Shared/_LayoutAlumno.cshtml";
+    ViewBag.Title = "Registro Asistencia";
     Utalca.ControlAsistencia.Clase clase = Model.Horario.Where(c => c.Fecha.ToString("ddMMyyyyHHmm") == @Request.QueryString["fecha"]).Single();
 }
 

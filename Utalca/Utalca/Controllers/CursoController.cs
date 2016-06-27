@@ -37,6 +37,34 @@ namespace Utalca.Controllers
             var curso = servicio.Curso(id);
             return View(curso);
         }
+        public ActionResult IndexAlumno()
+        {
+            var servicio = new ControlAsistencia.ControlAsistenciaClient();
+            var cursos = servicio.Cursos();
+            return View(cursos);
+        }
+
+        public ActionResult DetailsAlumno(long id)
+        {
+            var servicio = new ControlAsistencia.ControlAsistenciaClient();
+            var detalleCurso = servicio.Curso(id);
+            return View(detalleCurso);
+        }
+
+        public ActionResult HorarioAlumno(long id)
+        {
+            var servicio = new ControlAsistencia.ControlAsistenciaClient();
+            var curso = servicio.Curso(id);
+
+            return View(curso);
+        }
+
+        public ActionResult RegistroAsistenciaAlumno(long fecha, long id)
+        {
+            var servicio = new ControlAsistencia.ControlAsistenciaClient();
+            var curso = servicio.Curso(id);
+            return View(curso);
+        }
 
 
     }
