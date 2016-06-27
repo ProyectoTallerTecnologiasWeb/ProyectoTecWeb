@@ -1,0 +1,104 @@
+﻿@model Utalca.ControlAsistencia.Curso
+@{
+    Layout = "~/Views/Shared/_LayoutAlumno.cshtml";
+    ViewBag.Title = "Detalles";
+}
+    <section class="page-title bg-gray padd-tb-10 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="pull-left">
+                        <h3><b> @Html.DisplayFor(model => model.Nombre)</b> - sección @Html.DisplayFor(model => model.Seccion)</h3>
+                    </div>
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Curso")">Cursos</a>
+                        </li>
+                        <li class="active">Detalles </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"></h3>
+                </div>
+                <!-- comienzo formulario -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <center>
+                            <div class="gallery-box">
+                                <img style="width: 200px;" src="~/Resouces/200x200.gif">
+                            </div>
+
+
+                            <a class="btn btn-info" href="@Url.Action("HorarioAlumno", "Curso", new { id = Model.ID }) "> Horario </a>
+
+
+                            <hr>
+                            <h4><i class="fa fa-graduation-cap"></i> Profesores</h4>
+                            @foreach (var Profesores in Model.Profesores)
+                            {
+                                <p>@Profesores.Nombre</p>
+                            }
+
+                            <hr>
+                            <h4><i class="fa fa-university"></i> Institución</h4>
+                            Universidad de Talca, Facultad de Ingeniería
+                        </center>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-12" >
+                        <div id="callout-type-dl-truncate" class="bs-callout bs-callout-info">
+                                <h4>Créditos</h4>
+                                @Html.DisplayFor(model => model.Creditos)
+                                <h4>Descripción</h4>
+                                @Html.DisplayFor(model => model.Descripcion)
+                                <h4>Imagen</h4>
+                                @Html.DisplayFor(model => model.ImagenURL)
+                                <h4>URL</h4>
+                                @Html.DisplayFor(model => model.URL)                                
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="col-lg-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"¨> Participantes</h3>
+                </div>
+                <div class="row">
+                    @foreach (var alumnos in Model.Alumnos)
+                    {
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon "><i class="fa fa-user"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-number">@alumnos.Nombre</span>
+                                <span class="info-box-text">Alumno</span>
+                                
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+
+
+
+
+

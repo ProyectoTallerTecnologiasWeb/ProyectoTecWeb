@@ -200,8 +200,11 @@
     <Content Include="Views\Shared\_LayoutInit.cshtml" />
     <Content Include="Views\Shared\_LayoutAlumno.cshtml" />
     <Content Include="Views\Shared\_MenuAlumno.cshtml" />
-    <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\Home\IndexAlumno.cshtml" />
+    <Content Include="Views\Curso\DetailsAlumno.cshtml" />
+    <Content Include="Views\Curso\HorarioAlumno.cshtml" />
+    <Content Include="Views\Curso\IndexAlumno.cshtml" />
+    <Content Include="Views\Curso\RegistroAsistenciaAlumno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ControlAsistencia\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
