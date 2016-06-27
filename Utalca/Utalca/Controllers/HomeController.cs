@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Utalca.Controllers
 {
     public class HomeController : Controller
@@ -11,10 +12,7 @@ namespace Utalca.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
-        }
-        public ActionResult IndexAlumno()
-        {
+           
             return View();
         }
         public ActionResult Login()
@@ -24,19 +22,13 @@ namespace Utalca.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
+            var usuario = new Models.Usuario();
+            usuario.Email = email;
+            usuario.Password = password;
+            
 
-            //Session.Add(“id_user”, email);
-            var emailProfesor = "eortiz@utalca.cl";
-            var pass = "admin";
-            if (email == emailProfesor  && password == pass)
-            {
-                //controlador, accion
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                return RedirectToAction("IndexAlumno", "Home");
-            }
+            return RedirectToAction("Index", "Home");
+          
         }
 
 
