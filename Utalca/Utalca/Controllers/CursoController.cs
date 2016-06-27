@@ -27,6 +27,7 @@ namespace Utalca.Controllers
         {
             var servicio = new ControlAsistencia.ControlAsistenciaClient();
             var curso = servicio.Curso(id);
+            
             return View(curso);
         }
 

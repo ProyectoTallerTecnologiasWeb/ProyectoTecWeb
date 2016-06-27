@@ -15,7 +15,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 
 </head>
-<body style="overflow: visible;" class="wide">
+<body>
     <header id="header">
         <!-- top-header -->
         <div class="top-header hidden-xs ">
@@ -51,12 +51,11 @@
         <!-- //navbar -->
 
     </header>
-  
 
-    <div>
-        <hr />
+
+    <div class="container">
         @RenderBody()
-              
+
     </div>
     <footer class="footer footer-sub bg-light-blue ">
         <div class="container">
@@ -66,12 +65,12 @@
     @Html.Partial("_Errores")
     <script>
         $(document).ready(function () {
-            if ($('#ErroresModal').length > 0)
-            {
+            if ($('#ErroresModal').length > 0) {
                 $("#ErroresModal").modal('show')
             }
 
         });
     </script>
 </body>
+
 </html>
